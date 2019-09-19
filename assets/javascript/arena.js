@@ -1,4 +1,4 @@
-function arena (playerLoc){
+function arena (playerLoc) {
 
     var defeat;
 
@@ -10,6 +10,8 @@ function arena (playerLoc){
             attac : 10,
             def : 10,
             heal : 10,
+            rightPic : '<img src="assets/images/luker.png"></img>',
+            leftPic : '<img src="assets/images/lukel.png"></img>',
         },
         {
             name: "Darth",
@@ -18,6 +20,8 @@ function arena (playerLoc){
             attac : 15,
             def : 15,
             heal : 5,
+            rightPic : '<img src="assets/images/darthr.png"></img>',
+            leftPic : '<img src="assets/images/darthl.png"></img>',
         },
         {
             name: "Yoda",
@@ -26,6 +30,8 @@ function arena (playerLoc){
             attac : 10,
             def : 20,
             heal : 5,
+            rightPic : '<img src="assets/images/yodar.gif"></img>',
+            leftPic : '<img src="assets/images/yodal.png"></img>',
         },
         {
             name: "Maul",
@@ -34,6 +40,8 @@ function arena (playerLoc){
             attac : 25,
             def : 10,
             heal : 5,
+            rightPic : '<img src="assets/images/maulr.png"></img>',
+            leftPic : '<img src="assets/images/maull.png"></img>',
         },
     ];
 
@@ -42,7 +50,8 @@ function arena (playerLoc){
 
     $("#playerHitPoints").text(player[0].hp);
     $("#opponentHitPoints").text(opponent.hp);
-    $("#opponentName").text(opponent.name);
+    $('#playerPic').html(player[0].leftPic);
+    $('#opponentPic').html(opponent.rightPic);
 
     $("#healBtn").on("click",function() {
             player[0].hp += Math.round(player[0].heal*Math.random());
@@ -55,7 +64,6 @@ function arena (playerLoc){
             if (defeat==1) {
                 $("#playerHitPoints").empty();
                 $("#opponentHitPoints").empty();
-                $("#opponentName").empty();
                 $("#attackBtn").remove();
                 $("#healBtn").remove();
                 $("#gameOver").text("Sorry! Game Over!");
@@ -73,7 +81,6 @@ function arena (playerLoc){
                 if (defeat==1) {
                     $("#playerHitPoints").empty();
                     $("#opponentHitPoints").empty();
-                    $("#opponentName").empty();
                     $("#attackBtn").remove();
                     $("#healBtn").remove();
                     $("#gameOver").text("Sorry! Game Over!");
@@ -109,6 +116,9 @@ function arena (playerLoc){
         });
 
         opponent = jediNSith[Math.floor(Math.random()*jediNSith.length)];
-        $("#opponentName").text(opponent.name);
+        player[0].hp = player[0].hpCap;
+        $("#playerHitPoints").text(player[0].hp);
+        $("#opponentHitPoints").text(opponent.hp);
+        $('#opponentPic').html(opponent.rightPic);
     }
 }
