@@ -1,0 +1,59 @@
+html {
+  margin: auto;
+  background: grey;
+  background-image: url(../images/3px-tile.png);
+}
+
+div {
+  text-align: center;
+  color: gold;
+  font-family: 'Press Start 2P', cursive;
+  background: grey;
+  background-image: url(../images/3px-tile.png);
+}
+
+.charThumb {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+}
+
+.charThumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.button {
+  margin-left: 20px;
+  font-size: 25px;
+  color: black;
+  background-image: url(../images/3px-tile.png);
+}
+
+#playerHitPoints {
+  text-align: center;
+  color: blue;
+  font-family: 'Press Start 2P', cursive;
+  background: black;
+  background-image: url(../images/3px-tile.png);
+}
+
+#opponentHitPoints {
+  text-align: center;
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+  background: black;
+  background-image: url(../images/3px-tile.png);
+}
+
+#gameOver {
+  text-align: center;
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+  background: black;
+  background-image: url(../images/3px-tile.png);
+}
+
+#gameStats {
+  display: none;
+}

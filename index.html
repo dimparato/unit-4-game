@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<iframe src="assets/audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<title>Character Select Page</title>
+</head>
+
+<body>
+
+<audio autoplay loop volume="1.0">
+    <source src="assets/audio/maintheme.mp3" type="audio/mpeg">
+</audio>
+
+<div id="charSelect" class="container-fluid"></div>
+    <div>Star Wars: Jedi vs. Sith</div>
+    <div>Please Pick Your Character:</div>
+    <img id="luke" src="assets/images/lukel.PNG" height="300" width="300">
+    <img id="darth" src="assets/images/darthl.PNG" height="300" width="300">
+    <img id="maul" src="assets/images/maull.PNG" height="300" width="300">
+    <img id="yoda" src="assets/images/yodal.gif" height="300" width="300">
+</div>
+
+<div id="gameStats" class="container-fluid">
+        <div class="row">
+            <div class="col" id="opponentName"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="attackBtn">Attack</button><br>
+                <button id="healBtn">Heal</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="playerHitPoints"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="opponentHitPoints"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="gameOver"></div>
+        </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="assets/javascript/arena.js"></script>
+<script>
+
+$("#luke").on('click', function(){
+    arena(0);
+    $("#charSelect").hide();
+    $("#gameStats").show();
+});
+$("#darth").on('click', function(){
+    arena(1);
+    $("#charSelect").hide();
+    $("#gameStats").show();
+});
+$("#yoda").on('click', function(){
+    arena(2);
+    $("#charSelect").hide();
+    $("#gameStats").show();
+});
+$("#maul").on('click', function(){
+    arena(3);
+    $("#charSelect").hide();
+    $("#gameStats").show();
+});
+
+</script>
+</body>
+</html>
